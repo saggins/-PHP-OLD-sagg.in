@@ -31,6 +31,6 @@
 
 <?php
 
-
+file_put_contents("./project2/server.properties", $_POST[])
 
 ?>
