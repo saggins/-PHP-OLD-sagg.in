@@ -1,0 +1,11 @@
+
+
+ErrorDocument 404 /home/ubuntu/htdocs/sangminchun.info/errorpages/404.php
+<Files .git>
+Order allow,deny
+Deny from all
+</Files>
+<Files .htaccess>
+Order allow,deny
+Deny from all
+</Files>
