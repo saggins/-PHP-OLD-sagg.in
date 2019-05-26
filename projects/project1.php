@@ -1,5 +1,4 @@
 <?php
-    include("/config/sql_config.php");
     session_start();
 
 ?>
