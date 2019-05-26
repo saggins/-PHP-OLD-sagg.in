@@ -12,6 +12,10 @@
     <body>
         <div>
             <form action="" method="post">
+                <label>Start Video Stream?</label> <input type="submit" value="Submit">
+            </form>
+
+            <form action="" method="post">
                 <label>Code: </label><input type="text" name="code" class="box"><br>
                 <input type="submit" value=" Submit ">
         </div>
