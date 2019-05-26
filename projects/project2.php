@@ -15,7 +15,7 @@
 
             <p>Server Properties</p>
             <!-- Css: Make text book biger -->
-            <input type="text" name="Server Properties" value=""><br>
+            <input type="text" name="ServerProperties" value=""><br>
 
             <p>Custom Map</p>
             <input type="file" name="Map" value=""> <br>
@@ -31,6 +31,6 @@
 
 <?php
 
-file_put_contents("./project2/server.properties", $_POST[])
+file_put_contents("./project2/server.properties", escapeshellarg( $_POST["ServerProperties"] ) )
 
 ?>
