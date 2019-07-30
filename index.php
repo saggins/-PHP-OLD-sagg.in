@@ -41,6 +41,7 @@
     <h3>Thoughts in my Tiny brain</h3>
     <p>
         <ul>
+            <li>Automaticly add github commits</li>
             <li>Better integration with keepass with my server</li>
             <li>Beutify server with css</li>
             <li>Run CTF securly with openvpn</li>
