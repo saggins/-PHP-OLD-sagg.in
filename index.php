@@ -29,10 +29,10 @@
     
     <h3>Things I'm might be Woking on</h3>
     <p>
-    So i do things. I have two projects and the link to the code is at <a href="https://github.com/win32prog/sangminchun.info">Here.</a>
+    So i do things. I have two projects and the link to the code is at <a href="https://github.com/win32prog/sagg.in">Here. They're in other branches.</a>
         <ul>
-            <li>Project:1 Anime livestreaming thing... kinda found syncplay. <b>On Hold.</b> <a href="https://www.sangminchun.info/projects/project1.php">link</a></li> 
-            <li>Project:2 Server Management thing... I run game servers sometimes. I need to manage without people dming me. <b>Woking on</b> <a href="https://www.sangminchun.info/projects/project2.php">link</a></li>
+            <li>Project:1 Anime livestreaming thing... kinda found syncplay. <b>On Hold.</b> <a href="https://www.sagg.in/projects/project1.php">link</a></li> 
+            <li>Project:2 Server Management thing... I run game servers sometimes. I need to manage without people dming me. <b>Woking on</b> <a href="https://www.sagg.in/projects/project2.php">link</a></li>
             <li>Project:3 Nand2Tetris... FUCKING LOST ALL THE FILES, don't fucking know if im gonna redo stuff from middle school <b>Not even sure if im gonna continue</b><a href="https://github.com/win32prog/nandtotetris"></a></li>
             <li>Project:4 My own email system... ye idk docs aren't lightnoves <b>Very Close</b></li>
         </ul>
