@@ -9,6 +9,6 @@
 
 
 <?php
-    include 'formval.php';
+    require 'formval.php';
 
 ?>
