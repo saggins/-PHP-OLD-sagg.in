@@ -1,39 +1,115 @@
 <?php
+
 /**
  * This is a php file that contains the main class for Form Valiadtion. 
  * This should also vaildate if it has any security things to worry about. If any are detctable.
+ * 
+ * Any default servers shouldn't be in here because, they don't have properties
+ * 
+ * CURRENT SERVERS IN:
+ * 
+ * CusMc
+ * Tf2
  * 
  * @author Sangmin Chun <win32prog@gamil.com>
  * 
  */
 
-class FormValidate
+interface FormValidate
+{
+    
+    /**
+     * __construct declares all the variables needed for a function
+     */
+    public function __construct();
+
+    /**
+     * Main Function that will do all of the thinking for validation.
+     * 
+     * NOTE: make sure to santize the input. Pls no remote code exec
+     * 
+     * @return boolean
+     */    
+    public function validate();
+    
+}
+/**
+ * Generally will include anything that is a minecraft server.
+ * 
+ */
+interface Mcval extends FormValidate
 {
     /**
-     * Will return a boolean Variable called vaildate
+     *  Adds to __construct so it includes path to server.properties
+     */
+    public function __construct($PathToProps, $Op);
+
+}
+
+/**
+ * All generic SourceServers
+ */
+interface SourceVal extends FormValidate
+{   
+    /**
+     * Adds auto execs to __construct. $autoexecs will include things like what should be the rcon pass or what map or what map cycle
+     */
+    public function __construct($autoexecs);     
+}
+
+/**
+ * Form Validation for Custom Minecraft server! thing...
+ */
+class CusMC implements Mcval
+{
+    /**
+     * Declares everything needed. 
      * 
-     * It'll say if the file is good to go for server
-     * 
-     * __construct should have the file path or $file, 
-     * 
-     * validate should be extended for specific games or game genres
-     *  EX: Source games will have diffrent cases than Minecraft Games
-     *      Addtionally Minecraft will have diffrent varients such as the Vailna Server and Custom Server
-     * 
-     * 
-     * NOTE: Continue with https://www.killerphp.com/tutorials/php-objects-page-3/
+     * NOTE: $PathToProps is just the path to server.properties NONTHING else.
+     * NOTE: $Op Make sure not to leave $Op  a list of usernames.
      * 
      */
-
-    public $file;
-    
-    public function __construct($file, )
+    public function __construct($PathToProps, $Op)
     {
-        $this 
+        $this->PathToProps = $PathToProps;
+        $this->Op = $Op;
     }
-    public function validente() 
+    /**
+     * Actual thing to validate.
+     */
+    public function validate()
     {
+        
 
     }
 }
+/**
+ * Class for the generic TF2 server
+ */
+
+class TF2 implements SourceVal
+{
+
+    /**
+     * Declares any scripts that should be in the server.cfg
+     */
+
+    public function __construct($autoexecs)
+    {
+        $this->autoexecs = $autoexecs
+    }
+    
+    /**
+     * Will do the santizing and validating
+     * 
+     * @return boolean
+     */
+
+    public function validate()
+    {
+        
+    }
+}
+
+
 ?>
