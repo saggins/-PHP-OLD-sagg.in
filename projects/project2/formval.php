@@ -57,9 +57,27 @@ interface SourceVal extends FormValidate
     public function __construct($autoexecs);     
 }
 
+
+/**
+ * Server Properties check the files.
+ */
+class ServerProperties {
+    public function __setpath($PathToProps)
+    {
+        $this->path=$PathToProps;
+
+    }
+    public function checkfiles()
+    {
+        $file = fgets($PathToProps, "r");
+        
+    }
+}
+
 /**
  * Form Validation for Custom Minecraft server! thing...
  */
+
 class CusMC implements Mcval
 {
     /**
@@ -96,8 +114,9 @@ class TF2 implements SourceVal
 
     public function __construct($autoexecs)
     {
-        $this->autoexecs = $autoexecs
+        $this->autoexecs = $autoexecs;
     }
+
     
     /**
      * Will do the santizing and validating
