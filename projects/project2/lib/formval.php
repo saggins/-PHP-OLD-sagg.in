@@ -67,9 +67,44 @@ class ServerProperties {
         $this->path=$PathToProps;
 
     }
-    public function checkfiles()
+
+    /**
+     * checkfiles making sure things are correct
+     *
+     * @param [string] $path
+     * @return boolean
+     */
+    public function checkfiles($path)
     {
-        $file = fgets($PathToProps, "r");
+        $file = fgets($path->path, "r");
+        $valid = false;
+
+        while(! feof($file))
+        {
+
+            $line = fgets($file);
+            $values = explode("=", $line);
+            $prop = $values[0];
+            $value = $values[1];
+
+
+            switch($prop){
+                /**
+                 * checking for commenting
+                 */
+                case strpos($line, 0) == "#":
+                    break;
+                /**
+                 *  checking if spawn-protection is correct
+                 */
+                case $prop == "spawn-protection":
+                /**     if ( gettype($value) ==  ) {
+                *       
+                *    }
+                */
+            }
+            
+        }
         
     }
 }
