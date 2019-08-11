@@ -9,6 +9,6 @@
 
 
 <?php
-    require 'formval.php';
-
+    require 'lib/formval.php';
+    require 'lib/runserver.php';
 ?>

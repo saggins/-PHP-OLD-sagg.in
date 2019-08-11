@@ -62,10 +62,15 @@ interface SourceVal extends FormValidate
  * Server Properties check the files.
  */
 class ServerProperties {
-    public function __setpath($PathToProps)
+    public function __construct($PathToProps)
     {
         $this->path=$PathToProps;
 
+    }
+
+    public function getpath()
+    {
+        return $this->path;
     }
 
     /**
@@ -74,10 +79,10 @@ class ServerProperties {
      * @param [string] $path
      * @return boolean
      */
-    public function checkfiles($path)
+    public function checkfiles()
     {
-        $file = fgets($path->path, "r");
-        $valid = false;
+        $file = fgets($this->path, "r");
+        $valid = true; /** For testing use True */
 
         while(! feof($file))
         {
@@ -124,15 +129,16 @@ class CusMC implements Mcval
      */
     public function __construct($PathToProps, $Op)
     {
-        $this->PathToProps = $PathToProps;
-        $this->Op = $Op;
+        $this->path = $PathToProps;
+        $this->op = $Op;
     }
     /**
      * Actual thing to validate.
      */
-    public function validate()
+    public function validate($path, $op)
     {
-        
+        $server =  new ServerProperties($this->path);
+        $server ->checkfiles();
 
     }
 }
