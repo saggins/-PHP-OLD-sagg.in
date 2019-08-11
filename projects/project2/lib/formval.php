@@ -83,7 +83,7 @@ class ServerProperties {
     {
         $file = fgets($this->path, "r");
         $valid = true; /** For testing use True */
-
+        $linenum = 0;
         while(! feof($file))
         {
 
@@ -91,6 +91,7 @@ class ServerProperties {
             $values = explode("=", $line);
             $prop = $values[0];
             $value = $values[1];
+            $linenum++;
 
 
             switch($prop){
@@ -103,14 +104,43 @@ class ServerProperties {
                  *  checking if spawn-protection is correct
                  */
                 case $prop == "spawn-protection":
-                /**     if ( gettype($value) ==  ) {
-                *       
-                *    }
-                */
+                    if ( checktype($value, "int") == true ) {
+                        break;
+                    }
+                    else {
+                        $answer= false;
+                        break;
+                    }
+                case $prop == "max-tick-time":
+                    break;
+                
+                case $prop == "query.port":
+                    break;
+            }
+            if($answer == false){
+                break;
             }
             
         }
         
+    }
+
+    /**
+     * checktype
+     *
+     * @param any $value
+     * @param string $expected
+     * @return boolean
+     */
+    private function checktype($value, $expected)
+    {
+        $compare = settype($value, $expected);
+        if(strlen((string)$compare) == strlen((string)$expected)){
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 }
 
