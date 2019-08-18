@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Server Is <?php echo $success?> </title>
+        <title>Server Is <?php echo $_POST?> </title>
     </head>
     <body>
         
