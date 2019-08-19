@@ -1,14 +1,22 @@
+
+
 <html>
     <head>
-        <title>Server Is <?php echo $_POST?> </title>
     </head>
     <body>
+        <p>
+            Server is: 
+            
+        </p>
         
     </body>
 </html>
 
-
 <?php
-    require 'lib/formval.php';
-    require 'lib/runserver.php';
+    #secho shell_exec("cd /home/saggins/Documents/projects/sangminchun.info/ | sh ./testscript.sh 2>&1");
+    $server = new RunSagsMC("/home/saggins/Documents/projects/sangminchun.info/projects/project2", "testscript.sh");
+    
+
+
+
 ?>
