@@ -5,7 +5,7 @@
     </head>
     <body>
         <p>
-            Server is: 
+            Server is: <?php #echo shell_exec("cd /home/saggins/Documents/projects/minecraft-test && sh ./startserver.sh 2>&1"); ?>
             
         </p>
         
@@ -13,10 +13,9 @@
 </html>
 
 <?php
+    require("lib/runserver.php");
     #secho shell_exec("cd /home/saggins/Documents/projects/sangminchun.info/ | sh ./testscript.sh 2>&1");
-    $server = new RunSagsMC("/home/saggins/Documents/projects/sangminchun.info/projects/project2", "testscript.sh");
-    
-
-
+    $server = new RunSagsMC("/home/saggins/Documents/projects/minecraft-test", "startserver.sh");
+    $server->start();
 
 ?>

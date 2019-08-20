@@ -2,17 +2,18 @@
 
 use Thedudeguy\Rcon;
 require_once('thedudeguy/Rcon.php');
-    
-    interface Runserver{
-        public function __construct(string $PathToScript);
-        public function quitserver($server);
 
-    }
-
-    class RunSagsMC implements Runserver
+    class RunSagsMC 
     {
         public function __construct(string $PathToScript, $startscript){
-            echo shell_exec("cd " + $PathToScript + "&& " + $startscript, 'r');
+            $this->path = $PathToScript;
+            $this->script = $startscript;
+            $this->cmd = "cd ".$this->path." && sh ./".$this->script." 2>&1";
+        }
+        public function start(){
+            
+            return shell_exec($this->cmd);
+
         }
         public function quitserver(){
             $host = 'localhost';
